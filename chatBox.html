@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Chat Box</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .chat-box {
+            width: 300px;
+            height: 400px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        .messages {
+            flex-grow: 1;
+            padding: 10px;
+            overflow-y: auto;
+            border-bottom: 1px solid #ddd;
+        }
+        .input-container {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            width: 15%;
+            padding: 10px;
+            margin-left: 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chat-box">
+        <div class="messages" id="messageContainer"></div>
+        <div class="input-container">
+            <input type="text" id="userInput" placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var inputField = document.getElementById('userInput');
+            var messageContainer = document.getElementById('messageContainer');
+            var messageText = inputField.value.trim();
+
+            if (messageText !== '') {
+                var messageDiv = document.createElement('div');
+                messageDiv.textContent = messageText;
+                messageDiv.style.marginBottom = '10px';
+                messageDiv.style.padding = '5px';
+                messageDiv.style.backgroundColor = '#f1f1f1';
+                messageDiv.style.borderRadius = '4px';
+                messageContainer.appendChild(messageDiv);
+
+                // Clear the input field after sending the message
+                inputField.value = '';
+                messageContainer.scrollTop = messageContainer.scrollHeight; // Auto-scroll to the latest message
+            }
+        }
+    </script>
+
+</body>
+</html>

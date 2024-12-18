@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Recipe Blog</h1>
+        <nav>
+            <input type="text" id="search" placeholder="Search for recipes...">
+            <button onclick="searchRecipes()">Search</button>
+            <a href="about.html">About</a>
+            <a href="recipeindex.html">Recipe Index</a>
+            <a href="contact.html">Contact</a>
+            <a href="chatBox.html">Chat Box</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="recipe-list">
+            <h2>All Recipes</h2>
+            <div id="recipes">
+                <div class="recipe">
+                    <img src="image1.png" alt="Noodles" class="recipe-image">
+                    <h3>Noodles</h3>
+                    <p>A quick and tasty noodle recipe for your cravings.</p>
+                </div>
+                <div class="recipe">
+                    <img src="image2.png" alt="Pasta" class="recipe-image">
+                    <h3>Pasta</h3>
+                    <p>Delicious pasta with a creamy sauce and fresh herbs.</p>
+                </div>
+                <div class="recipe">
+                    <img src="image3.png" alt="Veg Roll" class="recipe-image">
+                    <h3>Veg Roll</h3>
+                    <p>A healthy vegetable roll perfect for snacks.</p>
+                </div>
+                <div class="recipe">
+                    <img src="image4.png" alt="Butter Chicken" class="recipe-image">
+                    <h3>Butter Chicken</h3>
+                    <p>A rich and creamy curry made with tender chicken, tomatoes, and spices.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="submit-recipe">
+            <h2>Submit Your Recipe</h2>
+            <form id="recipe-form">
+                <input type="text" id="recipe-title" placeholder="Recipe Title" required><br>
+                <textarea id="recipe-description" placeholder="Recipe Description" required></textarea><br>
+                <input type="text" id="name" placeholder="Your Name" required><br>
+                <input type="email" id="email" placeholder="Your Email" required><br>
+                <input type="tel" id="phone" placeholder="Your Phone Number" required><br>
+                <input type="file" id="recipe-image" accept="image/*" required><br>
+
+                <button type="submit">Submit Recipe</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
